@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-f948c90b-94c4-4b1e-ba0b-159d94586150" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 95.38 95.38">
+  <circle cx="47.69" cy="47.69" r="32.6" style="fill: none; stroke: #fff; stroke-miterlimit: 10;"/>
+  <circle cx="47.69" cy="47.69" r="40.15" style="fill: none; stroke: #fff; stroke-miterlimit: 10; stroke-width: .5px;"/>
+  <circle cx="47.69" cy="47.69" r="47.56" style="fill: none; stroke: #fff; stroke-miterlimit: 10; stroke-width: .25px;"/>
+  <path d="m34.23,34.18c-.28,0-.5.22-.5.5s.22.5.5.5h25.19l-26.87,26.87c-.2.2-.2.51,0,.71.1.1.23.15.35.15s.26-.05.35-.15l26.87-26.87v23.65c0,.28.22.5.5.5s.5-.22.5-.5v-25.36h-26.9Z" style="fill: #fff; stroke-width: 0px;"/>
+</svg>

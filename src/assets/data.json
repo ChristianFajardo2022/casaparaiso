@@ -1,0 +1,100 @@
+[
+  {
+    "id": 1,
+    "title": "Terraza",
+    "videoSrc": "/videos/playa.mp4",
+    "images": [
+      "/imagenes-tarjetas/terraza1.jpg",
+      "/imagenes-tarjetas/terraza2.jpg",
+      "/imagenes-tarjetas/terraza3.jpg",
+      "/imagenes-tarjetas/terraza3.jpg"
+    ],
+    "icono": "/imagenes-tarjetas/iconoTerraza-18.svg",
+    "desTarjeta": "Recorre nuestra terraza",
+    "description": "<p>Es una ventana natural, la puerta a la verdadera conexión natural adecuada con modernos sofás desde los que podrás disfrutar de la brisa caribeña mientras contemplas la inmensidad del río cuando se encuentra con el mar.</p>"
+  },
+  {
+    "id": 2,
+    "title": "Habitación_secundaria",
+    "videoSrc": "/videos/playa.mp4",
+    "images": [
+      "/imagenes-tarjetas/secundaria1.jpg",
+      "/imagenes-tarjetas/secundaria2.jpg",
+      "/imagenes-tarjetas/secundaria3.jpg",
+      "/imagenes-tarjetas/secundaria3.jpg"
+    ],
+    "icono": "/imagenes-tarjetas/iconoHabitacionSecundiaria-18.svg",
+    "desTarjeta": "Recorre nuestras habitaciones Secundarias",
+    "description": "<p>Igualmente equipadas con las amenidades de la naturaleza como al vista única a la selva de Los Naranjos y acogedores detalles como una cama diseñada para un descanso ideal serán el segundo mejor lugar para que tus invitados te acompañen a disfrutar de esta Kasa Paraíso.</p>"
+  },
+  {
+    "id": 3,
+    "title": "Cocina",
+    "videoSrc": "/videos/playa.mp4",
+    "images": [
+      "/imagenes-tarjetas/cocina1.jpg",
+      "/imagenes-tarjetas/cocina2.jpg",
+      "/imagenes-tarjetas/cocina3.jpg",
+      "/imagenes-tarjetas/cocina3.jpg"
+    ],
+    "icono": "/imagenes-tarjetas/iconoCocina.svg",
+    "desTarjeta": "Recorre nuestra cocina",
+    "description": "<p>Allí preparamos parte del menú que se incluye en tu estadía como: desayunos, almuerzos, cenas, bebidas y postres, todo hecho con ingredientes frescos y de primera calidad. O si prefieres, puedes inspirarte y crear deliciosas comidas mientras disfrutas del entorno natural, ya que está equipada con electrodomésticos de alta gama, amplias encimeras y una vista panorámica a la selva.</p>"
+  },
+  {
+    "id": 4,
+    "title": "Piscina",
+    "videoSrc": "/videos/playa.mp4",
+    "images": [
+      "/imagenes-tarjetas/piscina1.jpg",
+      "/imagenes-tarjetas/piscina2.jpg",
+      "/imagenes-tarjetas/piscina3.jpg",
+      "/imagenes-tarjetas/piscina3.jpg"
+    ],
+    "icono": "/imagenes-tarjetas/iconoPiscina-18.svg",
+    "desTarjeta": "Recorre nuestras piscinas",
+    "description": "<p>Estratégicamente ubicadas para el disfrute. Está a tu elección si deseas entrenar para mantener tu forma en la piscina semiolímpica o está una opción recreativa donde simplemente tendrás  que preocuparte por disfrutar de un tarde relajante mientras aprecias la naturaleza que nos abraza.</p>"
+  },
+  {
+    "id": 5,
+    "title": "Habitación_principal",
+    "videoSrc": "/videos/playa.mp4",
+    "images": [
+      "/imagenes-tarjetas/principal1.jpg",
+      "/imagenes-tarjetas/principal2.jpg",
+      "/imagenes-tarjetas/principal3.jpg",
+      "/imagenes-tarjetas/principal3.jpg"
+    ],
+    "icono": "/imagenes-tarjetas/iconoHabitacionPrincipal.svg",
+    "desTarjeta": "Recorre nuestra Habitación Principal",
+    "description": "<p>En Kasa Paraíso Tayrona tu espacio para descansar será un oasis de calma y relajación, los ventanales panorámicos le darán iluminación natural sobre la relajante cama King-Size.</p><div style='height: 1rem;'>&nbsp;</div><p>Su baño privado completamente dotado y con acabados de alta calidad te harán sentir como en un spa en tu propia habitación.</p>"
+  },
+  {
+    "id": 6,
+    "title": "Comedor",
+    "videoSrc": "/videos/playa.mp4",
+    "images": [
+      "/imagenes-tarjetas/comedor1.jpg",
+      "/imagenes-tarjetas/comedor2.jpg",
+      "/imagenes-tarjetas/comedor3.jpg",
+      "/imagenes-tarjetas/comedor3.jpg"
+    ],
+    "icono": "/imagenes-tarjetas/iconoComedor-18.svg",
+    "desTarjeta": "Recorre nuestro comedor",
+    "description": "<p>Este espacio acogedor y elegante, está decorado con una cuidada selección de objetos artesanales que añaden un toque cultural y auténtico.</p><div style='height: 1rem;'>&nbsp;</div><p>La mesa de madera maciza, rodeada de sillas color coral, crea un ambiente cálido y vibrante, perfecto para disfrutar de comidas en familia o con amigos.</p>"
+  },
+  {
+    "id": 7,
+    "title": "Naturaleza",
+    "videoSrc": "/videos/playa.mp4",
+    "images": [
+      "/imagenes-tarjetas/auxiliar1.jpg",
+      "/imagenes-tarjetas/auxiliar2.jpg",
+      "/imagenes-tarjetas/auxiliar3.jpg",
+      "/imagenes-tarjetas/auxiliar3.jpg"
+    ],
+    "icono": "/imagenes-tarjetas/iconoPlaya-18.svg",
+    "desTarjeta": "Recorre nuestra naturaleza",
+    "description": "<p>Además, de todas la amenidades y comodidades para que tu estadía en Kasa Paraíso Tayrona sea inolvidable, tenemos el privilegio de estar rodeados por un entorno natural con acceso directo a playas vírgenes de arena blanca y a un río cristalino, con un puerto privado al que puedes acceder a pie desde la casa. </p>"
+  }
+]
