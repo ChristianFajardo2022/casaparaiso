@@ -11,7 +11,7 @@
     ],
     "icono": "/imagenes-tarjetas/iconoTerraza-18.svg",
     "desTarjeta": "Recorre nuestra terraza",
-    "description": "<p>Es una ventana natural, la puerta a la verdadera conexión natural adecuada con modernos sofás desde los que podrás disfrutar de la brisa caribeña mientras contemplas la inmensidad del río cuando se encuentra con el mar.</p>"
+    "description": "<p>Esta zona proporciona una ventana natural, que abre sus puertas a la conexión con la naturaleza, gracias a sus modernos sofás que permiten sentir la brisa caribeña y la belleza del encuentro del rio y el mar.</p>"
   },
   {
     "id": 2,
@@ -25,7 +25,7 @@
     ],
     "icono": "/imagenes-tarjetas/iconoHabitacionSecundiaria-18.svg",
     "desTarjeta": "Recorre nuestras habitaciones Secundarias",
-    "description": "<p>Igualmente equipadas con las amenidades de la naturaleza como al vista única a la selva de Los Naranjos y acogedores detalles como una cama diseñada para un descanso ideal serán el segundo mejor lugar para que tus invitados te acompañen a disfrutar de esta Kasa Paraíso.</p>"
+    "description": "<p>Equipada con vistas impresionantes a la selva de Los Naranjos y detalles acogedores que invitan al descanso y una cama diseñada para brindar el máximo confort, creando un espacio perfecto para relajarse y disfrutar de la experiencia única que ofrece Casa Paraíso Tayrona.</p>"
   },
   {
     "id": 3,
@@ -53,7 +53,7 @@
     ],
     "icono": "/imagenes-tarjetas/iconoPiscina-18.svg",
     "desTarjeta": "Recorre nuestras piscinas",
-    "description": "<p>Estratégicamente ubicadas para el disfrute. Está a tu elección si deseas entrenar para mantener tu forma en la piscina semiolímpica o está una opción recreativa donde simplemente tendrás  que preocuparte por disfrutar de un tarde relajante mientras aprecias la naturaleza que nos abraza.</p>"
+    "description": "<p>Ubicadas estratégicamente para tu disfrute, puedes elegir entre entrenar y mantenerte en forma en la piscina semiolímpica o simplemente relajarte en la opción recreativa, donde solo tendrás que preocuparte por disfrutar de una tarde tranquila mientras te rodea la naturaleza que nos envuelve.</p>"
   },
   {
     "id": 5,
@@ -67,7 +67,7 @@
     ],
     "icono": "/imagenes-tarjetas/iconoHabitacionPrincipal.svg",
     "desTarjeta": "Recorre nuestra Habitación Principal",
-    "description": "<p>En Kasa Paraíso Tayrona tu espacio para descansar será un oasis de calma y relajación, los ventanales panorámicos le darán iluminación natural sobre la relajante cama King-Size.</p><div style='height: 1rem;'>&nbsp;</div><p>Su baño privado completamente dotado y con acabados de alta calidad te harán sentir como en un spa en tu propia habitación.</p>"
+    "description": "<p>En Casa Paraiso Tayrona, este será un espacio para descansar, lleno de calma y relajación, donde los ventanales panorámicos brindarán iluminación natural sobre la relajante cama King-size. Su baño privado, completamente dotado y con acabados de alta calidad, te harán sentir como en un spa dentro de tu habitación.</p>"
   },
   {
     "id": 6,
@@ -81,7 +81,7 @@
     ],
     "icono": "/imagenes-tarjetas/iconoComedor-18.svg",
     "desTarjeta": "Recorre nuestro comedor",
-    "description": "<p>Este espacio acogedor y elegante, está decorado con una cuidada selección de objetos artesanales que añaden un toque cultural y auténtico.</p><div style='height: 1rem;'>&nbsp;</div><p>La mesa de madera maciza, rodeada de sillas color coral, crea un ambiente cálido y vibrante, perfecto para disfrutar de comidas en familia o con amigos.</p>"
+    "description": "<p>Este espacio acogedor y elegante, decorado con una cautelosa selección de objetos artesanales, añade un toque cultural y autentico. La mesa de madera maciza, rodeada de sillas color coral, crea un ambiente vibrante y caribeño para disfrutar de comidas típicas en familia o con amigos.</p>"
   },
   {
     "id": 7,

@@ -54,3 +54,90 @@
   font-size: 1.5rem;
   color: #022933;
 }
+
+
+
+/* Contenedor principal para los DatePicker */
+.datepicker-container {
+  position: relative;
+  width: 100%;
+  max-width: 320px; /* Ajusta según el tamaño deseado */
+  margin: 0 auto;
+}
+
+/* Tarjeta genérica para Llegada y Salida */
+.datepicker-card {
+  position: absolute;
+  width: 100%;
+  padding: 16px;
+  background-color: #f4efdf;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease;
+}
+
+/* Tarjeta de Llegada */
+.llegada-card {
+  z-index: 10;
+  transform: translateY(20%); /* Ajusta para más o menos traslape */
+}
+
+/* Tarjeta de Salida */
+.salida-card {
+  z-index: 5;
+  background-color: #ada89a; /* Color de fondo para la tarjeta de Salida */
+  transform: translateY(60%); /* Ajusta para más o menos traslape */
+}
+
+/* Estilos para DatePicker */
+.react-datepicker {
+  font-size: 0.9rem;
+}
+
+.react-datepicker__header {
+  background-color: #88a198;
+  border-bottom: none;
+}
+
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+  color: #ffffff;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: #022933;
+  color: #ffffff;
+  border-radius: 50%;
+}
+
+.react-datepicker__day:hover {
+  background-color: #88a198;
+  color: #ffffff;
+  border-radius: 50%;
+}
+
+.react-datepicker__navigation {
+  top: 10px;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+/* Botones de interacción */
+.button-reset,
+.button-accept {
+  margin-top: 20px; /* Espacio después de los DatePicker */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #88a198;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button-reset:hover,
+.button-accept:hover {
+  background-color: #022933;
+}

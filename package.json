@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
+    "@mercadopago/sdk-react": "^0.0.19",
     "@react-three/drei": "^9.109.2",
     "@react-three/fiber": "^8.16.8",
     "@types/three": "^0.166.0",
+    "axios": "^1.7.7",
     "date-fns": "^3.6.0",
     "gsap": "^3.12.5",
     "lottie-react": "^2.4.0",

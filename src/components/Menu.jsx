@@ -159,7 +159,7 @@ const Menu = ({
           })}
         </div>
       </div>
-      <div className="w-[75%] border-t-2 border-[--bg] opacity-40 mx-auto mt-0"></div>
+      <div className="w-[75%] border-t-2 border-[--bg] opacity-40 mx-auto mt-0 lineaTiempo"></div>
 
       {/* Mostrar Tarjeta si está seleccionada */}
       {selectedTarjeta && (

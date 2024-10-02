@@ -90,14 +90,14 @@ const Cuantos = ({ showCuantos, toggleCuantos }) => {
           <h2 className={`text-base creatoLight ${textClass}`}>Animales de servicio</h2>
           <p className="creatoLight text-sm mt-4 px-4">Los animales de servicio no se consideran mascotas,
           así que no hace falta que los agregues aquí.</p>
-          <p className="creatoLight text-sm mt-4 px-4">¿Viajas con un animal de apoyo emocional? Consulta nuestra politica de accesibilidad.</p>
+          <p className="creatoLight text-sm mt-4 px-4">¿Viajas con un animal de apoyo emocional? Consulta nuestra política de accesibilidad.</p>
           <button onClick={handleAccept} className=" w-full flex justify-center items-center mt-4"> <img className=" w-4 rotate-[270deg] " src="/imagenes-tarjetas/iconoAbrirTarjetaReserva.svg" alt="" /></button>
         </div>
       );
     } else if (content === "card2") {
       return (
         <div className=" px-4">
-          <h2 className={`text-base  creatoLight ${textClass}`}>Huespedes</h2>
+          <h2 className={`text-base  creatoLight ${textClass}`}>Huéspedes</h2>
           <div className="flex flex-col space-y-4 mt-4 px-4">
             {["Adultos", "Niños", "Bebés", "Mascotas"].map((label, index) => (
               <div key={index} className="flex items-center justify-between">

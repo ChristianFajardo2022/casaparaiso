@@ -104,7 +104,7 @@ export const Loader = ({ setPlay, started, setloading, handleClickAudio }) => {
           </svg>
         </figure>
       ) : (
-        "Empezar"
+        "Entrar"
       )}
     </button>
   </div>
