@@ -56,7 +56,7 @@ const Tarjeta = ({ title, onClose }) => {
 
   return (
     <div className="fixed top-0 left-0 w-full h-full z-[55] flex items-center justify-center backdrop-blur-xl bg-gray-900 bg-opacity-35">
-      <div className="flex flex-col sm:mt-0 mt-20 items-center h-[90vh] sm:h-auto max-w-[90%] md:max-w-[70%] bg-[--bg] relative p-4 rounded-2xl md:flex-row md:p-0 overflow-auto">
+      <div className="flex flex-col sm:mt-0 mt-20 items-center h-[90vh] sm:h-auto max-w-[100%] md:max-w-[70%] bg-[--bg] relative p-4 rounded-2xl md:flex-row md:p-0 overflow-auto">
         <button onClick={onClose} className="absolute top-[18px] z-[80] md:top-4 right-4 md:right-4">
           <img src={imagencerrar} className="w-6 md:w-6" />
         </button>
