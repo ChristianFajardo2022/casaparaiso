@@ -68,7 +68,7 @@ const VideoPlayer = ({
   };
 
   return (
-    <div className="absolute z-0 top-0 left-0 w-full h-full overflow-hidden movil">
+    <div className="fixed z-0 top-0 left-0 w-full h-full overflow-hidden movil">
       <AudioPlayer
         audioRef={audioRef}
         audioSrc={audioMusic}

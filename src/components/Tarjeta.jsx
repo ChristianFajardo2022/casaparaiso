@@ -143,7 +143,7 @@ const Tarjeta = ({ title, onClose }) => {
           </button>
         </div>
       )}
-<div className="absolute bottom-[10vh] flex justify-center mt-4">
+<div className="absolute bottom-[10vh]  justify-center mt-4 sm:block hidden">
   {names.map((name, index) => (
     <button
       key={index}
