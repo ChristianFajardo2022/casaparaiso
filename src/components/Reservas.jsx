@@ -4,7 +4,7 @@ import Cuantos from "./Cuantos";
 import Resumen from "./Resumen";
 import Consulta from "./Consulta";
 
-const Reserva = ({ onClose }) => {
+const Reserva = ({ onClose, showReserva }) => {
   const [showCalendars, setShowCalendars] = useState(false);
   const [showSalida, setShowSalida] = useState(false);
   const [showCuantos, setShowCuantos] = useState(false);
@@ -44,7 +44,11 @@ const Reserva = ({ onClose }) => {
   };
 
   return (
-    <div className="absolute w-full h-full bg-white bg-opacity-20 backdrop-blur-2xl z-[55] flex justify-center items-center">
+    <div
+      className={`${
+        showReserva ? "pointer-events-auto" : "pointer-events-none"
+      } absolute w-full h-full bg-white bg-opacity-20 backdrop-blur-2xl z-[55] flex justify-center items-center`}
+    >
       <div
         className={`w-full sm:w-[580px] bg-[--bg] rounded-xl shadow-lg transition-all duration-500 ease-in-out overflow-y-auto barra relative ${
           isAnySectionOpen ? "h-full" : "h-full sm:h-auto"
