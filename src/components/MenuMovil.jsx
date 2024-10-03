@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 
 // JSON con iconos y nombres
@@ -24,6 +24,7 @@ const tiempo = [
 
 const Menu = ({ onButtonClick }) => {
   const containerRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0); // Para manejar el índice actual
   const refs = useRef(
     items.reduce((acc, item) => {
       acc[item.nombre] = {
@@ -34,6 +35,41 @@ const Menu = ({ onButtonClick }) => {
       return acc;
     }, {})
   );
+
+  // Detectar gestos de deslizamiento
+  useEffect(() => {
+    let startX = 0;
+    let endX = 0;
+
+    const handleTouchStart = (e) => {
+      startX = e.touches[0].clientX;
+    };
+
+    const handleTouchMove = (e) => {
+      endX = e.touches[0].clientX;
+    };
+
+    const handleTouchEnd = () => {
+      if (startX > endX + 50) {
+        // Deslizó a la izquierda (mostrar siguiente)
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
+      } else if (startX < endX - 50) {
+        // Deslizó a la derecha (mostrar anterior)
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + items.length) % items.length);
+      }
+    };
+
+    const container = containerRef.current;
+    container.addEventListener("touchstart", handleTouchStart);
+    container.addEventListener("touchmove", handleTouchMove);
+    container.addEventListener("touchend", handleTouchEnd);
+
+    return () => {
+      container.removeEventListener("touchstart", handleTouchStart);
+      container.removeEventListener("touchmove", handleTouchMove);
+      container.removeEventListener("touchend", handleTouchEnd);
+    };
+  }, []);
 
   useEffect(() => {
     const showImage = (imageRef, start, duration, buttonRef, verMasRef) => {
@@ -134,10 +170,12 @@ const Menu = ({ onButtonClick }) => {
         className="flex justify-center pt-28 pb-8 w-full no-scrollbar"
       >
         <div className="flex justify-start items-center w-full">
-          {items.map((item) => (
+          {items.map((item, index) => (
             <div
               key={item.nombre}
-              className="relative flex flex-col items-center min-w-[100vw]"
+              className={`relative flex flex-col items-center min-w-[100vw] ${
+                currentIndex === index ? "block" : "hidden"
+              }`}
             >
               {/* Ícono cargado desde el JSON */}
               <img
