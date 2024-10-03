@@ -5,12 +5,14 @@ import der from "/imagenes-tarjetas/der.svg";
 import cer from "/imagenes-tarjetas/cerrargaleria.svg";
 import data from "../assets/data"; // Importar los datos
 
-const Tarjeta = ({ title, onClose }) => {
+const Tarjeta = ({ title, onClose, showTarjeta }) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [activeDot, setActiveDot] = useState(0); // Estado para el dot activo
-  const [tarjetaData, setTarjetaData] = useState(data.find(item => item.title === title));
+  const [tarjetaData, setTarjetaData] = useState(
+    data.find((item) => item.title === title)
+  );
 
   // Asegúrate de que el primer setSelectedImage se actualice correctamente
   useState(() => {
@@ -26,7 +28,9 @@ const Tarjeta = ({ title, onClose }) => {
 
   const handlePrevImage = () => {
     if (tarjetaData && tarjetaData.images.length > 0) {
-      const newIndex = (currentIndex - 1 + tarjetaData.images.length) % tarjetaData.images.length;
+      const newIndex =
+        (currentIndex - 1 + tarjetaData.images.length) %
+        tarjetaData.images.length;
       setSelectedImage(tarjetaData.images[newIndex]);
       setCurrentIndex(newIndex);
     }
@@ -46,32 +50,44 @@ const Tarjeta = ({ title, onClose }) => {
 
   const handleDotClick = (index) => {
     setActiveDot(index);
-    const newTarjetaData = data.find(item => item.title === names[index]);
+    const newTarjetaData = data.find((item) => item.title === names[index]);
     setTarjetaData(newTarjetaData);
     setSelectedImage(newTarjetaData.images[0]);
     setCurrentIndex(0);
   };
 
-  const names = data.map(item => item.title);
+  const names = data.map((item) => item.title);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full z-[55] flex items-center justify-center backdrop-blur-xl bg-gray-900 bg-opacity-35">
+    <div
+      className={`${
+        showTarjeta ? "pointer-events-auto" : "pointer-events-none"
+      } fixed top-0 left-0 w-full h-full z-[55] flex items-center justify-center backdrop-blur-xl bg-gray-900 bg-opacity-35`}
+    >
       <div className="flex flex-col sm:mt-0 mt-20 items-center h-[90vh] sm:h-auto max-w-[100%] md:max-w-[70%] bg-[--bg] relative p-4 rounded-2xl md:flex-row md:p-0 overflow-auto">
-        <button onClick={onClose} className="absolute top-[18px] z-[80] md:top-4 right-4 md:right-4">
+        <button
+          onClick={onClose}
+          className="absolute top-[18px] z-[80] md:top-4 right-4 md:right-4"
+        >
           <img src={imagencerrar} className="w-6 md:w-6" />
         </button>
         <div className="w-full md:w-2/3 sm:mt-0 mt-16 relative">
           <div className="relative flex items-center justify-center">
             <img
-              src={selectedImage || ''}
+              src={selectedImage || ""}
               className="w-full z-[70] cursor-pointer sm:rounded-l-2xl rounded-l-2xl sm:rounded-r-none rounded-r-2xl object-cover h-[300px] md:h-[500px]"
-              alt={tarjetaData?.title || ''}
+              alt={tarjetaData?.title || ""}
               onClick={handleImageClick}
             />
             <div className="absolute z-[70] bottom-4 left-8 flex">
-              <img className="w-6 mr-4" src="/imagenes-tarjetas/iconoPrincipal.svg"/>
+              <img
+                className="w-6 mr-4"
+                src="/imagenes-tarjetas/iconoPrincipal.svg"
+              />
               <div>
-                <h1 className="font-bold text-xl md:text-2xl">{tarjetaData?.title || ''}</h1>
+                <h1 className="font-bold text-xl md:text-2xl">
+                  {tarjetaData?.title || ""}
+                </h1>
                 <p className="text-xs">primer piso</p>
               </div>
             </div>
@@ -94,22 +110,31 @@ const Tarjeta = ({ title, onClose }) => {
           </div>
           <h1 className="text-3xl mb-8">Descripción:</h1>
           <p
-            dangerouslySetInnerHTML={{ __html: tarjetaData?.description || '' }}
+            dangerouslySetInnerHTML={{ __html: tarjetaData?.description || "" }}
             className="text-start text-xs mt-2 w-full creatoRegular"
           />
           <div className="flex justify-between w-full mt-8 text-xs">
             <div className="h-12 flex flex-col items-center justify-center">
-              <img className="w-4 pb-2" src="/imagenes-tarjetas/iconoArea.svg" />
+              <img
+                className="w-4 pb-2"
+                src="/imagenes-tarjetas/iconoArea.svg"
+              />
               <p>Área</p>
               <p>10 m2</p>
             </div>
             <div className="h-12 flex flex-col items-center justify-center">
-              <img className="w-8 pb-2" src="/imagenes-tarjetas/iconoTemp.svg" />
+              <img
+                className="w-8 pb-2"
+                src="/imagenes-tarjetas/iconoTemp.svg"
+              />
               <p>Temp.</p>
               <p>Regulable</p>
             </div>
             <div className="h-12 flex flex-col items-center justify-center">
-              <img className="w-4 pb-2" src="/imagenes-tarjetas/iconoBanos.svg" />
+              <img
+                className="w-4 pb-2"
+                src="/imagenes-tarjetas/iconoBanos.svg"
+              />
               <p>Baños</p>
               <p>Privados</p>
             </div>
@@ -127,7 +152,11 @@ const Tarjeta = ({ title, onClose }) => {
             >
               <img src={izq} className="w-16" />
             </button>
-            <img src={selectedImage} className="max-w-4/5 max-h-4/5 rounded-lg" alt="Selected" />
+            <img
+              src={selectedImage}
+              className="max-w-4/5 max-h-4/5 rounded-lg"
+              alt="Selected"
+            />
             <button
               onClick={handleNextImage}
               className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-2xl"
@@ -143,16 +172,19 @@ const Tarjeta = ({ title, onClose }) => {
           </button>
         </div>
       )}
-<div className="absolute bottom-[10vh]  justify-center mt-4 sm:block hidden">
-  {names.map((name, index) => (
-    <button
-      key={index}
-      className={` mx-3 rounded-full ${activeDot === index ? 'w-[100px] h-[10px] bg-[#F4EFDF]' : 'w-[10px] h-[10px] bg-[#F4EFDF]'}`}
-      onClick={() => handleDotClick(index)}
-    />
-  ))}
-</div>
-
+      <div className="absolute bottom-[10vh]  justify-center mt-4 sm:block hidden">
+        {names.map((name, index) => (
+          <button
+            key={index}
+            className={` mx-3 rounded-full ${
+              activeDot === index
+                ? "w-[100px] h-[10px] bg-[#F4EFDF]"
+                : "w-[10px] h-[10px] bg-[#F4EFDF]"
+            }`}
+            onClick={() => handleDotClick(index)}
+          />
+        ))}
+      </div>
     </div>
   );
 };

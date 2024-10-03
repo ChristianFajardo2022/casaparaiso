@@ -120,6 +120,7 @@ const VideoPlayer = ({
 
       {showTarjeta && (
         <Tarjeta
+          showTarjeta={showTarjeta}
           videoSrc={showTarjeta.videoSrc}
           images={showTarjeta.images}
           title={showTarjeta.title}
