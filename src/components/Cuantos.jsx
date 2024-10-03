@@ -83,7 +83,7 @@ const Cuantos = ({ showCuantos, toggleCuantos }) => {
 
       <div className={`w-full mt-0 transition-height duration-500 ease-in-out ${showCuantos ? 'h-[350px]' : 'h-0'} overflow-hidden`}>
         <div className="relative flex flex-col justify-center items-center w-full h-full">
-          <div className="absolute sm:w-[75%] w-full h-[270px] rounded-3xl shadow-[10px_-8px_10px_-5px_rgba(0,0,0,0.3)] cursor-pointer border border-[#022933] border-opacity-10 transition-transform duration-500 bg-[#F4EFDF] z-30">
+          <div className="absolute sm:w-[75%] w-full h-[320px] rounded-3xl shadow-[10px_-8px_10px_-5px_rgba(0,0,0,0.3)] cursor-pointer border border-[#022933] border-opacity-10 transition-transform duration-500 bg-[#F4EFDF] z-30">
             <div className="p-4">
               {getCardContent()} {/* Llamamos directamente la función para obtener el contenido de la carta */}
             </div>
