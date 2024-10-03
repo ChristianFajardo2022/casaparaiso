@@ -85,13 +85,13 @@
   },
   {
     "id": 7,
-    "title": "Naturaleza",
+    "title": "Exteriores",
     "videoSrc": "/videos/playa.mp4",
     "images": [
-      "/imagenes-tarjetas/auxiliar1.jpg",
-      "/imagenes-tarjetas/auxiliar2.jpg",
-      "/imagenes-tarjetas/auxiliar3.jpg",
-      "/imagenes-tarjetas/auxiliar3.jpg"
+      "/imagenes-tarjetas/exteriores1.jpg",
+      "/imagenes-tarjetas/exteriores2.jpg",
+      "/imagenes-tarjetas/exteriores3.jpg",
+      "/imagenes-tarjetas/exteriores3.jpg"
     ],
     "icono": "/imagenes-tarjetas/iconoPlaya-18.svg",
     "desTarjeta": "Recorre nuestra naturaleza",

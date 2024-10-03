@@ -56,15 +56,15 @@ const Tarjeta = ({ title, onClose }) => {
 
   return (
     <div className="fixed top-0 left-0 w-full h-full z-[55] flex items-center justify-center backdrop-blur-xl bg-gray-900 bg-opacity-35">
-      <div className="flex flex-col items-center max-w-[90%] md:max-w-[70%] bg-[--bg] relative p-4 rounded-2xl md:flex-row md:p-0">
-        <button onClick={onClose} className="absolute top-[-45px] md:top-4 right-4 md:right-4">
+      <div className="flex flex-col sm:mt-0 mt-20 items-center h-[90vh] sm:h-auto max-w-[100%] md:max-w-[70%] bg-[--bg] relative p-4 rounded-2xl md:flex-row md:p-0 overflow-auto">
+        <button onClick={onClose} className="absolute top-[18px] z-[80] md:top-4 right-4 md:right-4">
           <img src={imagencerrar} className="w-6 md:w-6" />
         </button>
-        <div className="w-full md:w-2/3 relative">
+        <div className="w-full md:w-2/3 sm:mt-0 mt-16 relative">
           <div className="relative flex items-center justify-center">
             <img
               src={selectedImage || ''}
-              className="w-full z-[70] cursor-pointer rounded-l-2xl object-cover h-[300px] md:h-[500px]"
+              className="w-full z-[70] cursor-pointer sm:rounded-l-2xl rounded-l-2xl sm:rounded-r-none rounded-r-2xl object-cover h-[300px] md:h-[500px]"
               alt={tarjetaData?.title || ''}
               onClick={handleImageClick}
             />
@@ -143,7 +143,7 @@ const Tarjeta = ({ title, onClose }) => {
           </button>
         </div>
       )}
-<div className="absolute bottom-[10vh] flex justify-center mt-4">
+<div className="absolute bottom-[10vh]  justify-center mt-4 sm:block hidden">
   {names.map((name, index) => (
     <button
       key={index}
