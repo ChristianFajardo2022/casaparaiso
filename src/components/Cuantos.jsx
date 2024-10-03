@@ -31,7 +31,7 @@ const Cuantos = ({ showCuantos, toggleCuantos }) => {
         <h2 className="text-base creatoLight">Huéspedes</h2>
         <div className="flex flex-col space-y-4 mt-4 px-4">
           <div className="flex items-center justify-between">
-            <span>Adultos</span><span className=" text-[8px]">(13 años en adelante)</span>
+            <span>Adultos</span><span className=" text-[10px]">(13 años en adelante)</span>
             <div className="flex items-center">
               <button onClick={() => handleDecrement(0)} className="w-6 bg-[#88A198] border border-gray-300 rounded-full">-</button>
               <span className="px-4">{counters[0]}</span>
@@ -83,7 +83,7 @@ const Cuantos = ({ showCuantos, toggleCuantos }) => {
 
       <div className={`w-full mt-0 transition-height duration-500 ease-in-out ${showCuantos ? 'h-[350px]' : 'h-0'} overflow-hidden`}>
         <div className="relative flex flex-col justify-center items-center w-full h-full">
-          <div className="absolute w-[75%] h-[270px] rounded-3xl shadow-[10px_-8px_10px_-5px_rgba(0,0,0,0.3)] cursor-pointer border border-[#022933] border-opacity-10 transition-transform duration-500 bg-[#F4EFDF] z-30">
+          <div className="absolute sm:w-[75%] w-full h-[270px] rounded-3xl shadow-[10px_-8px_10px_-5px_rgba(0,0,0,0.3)] cursor-pointer border border-[#022933] border-opacity-10 transition-transform duration-500 bg-[#F4EFDF] z-30">
             <div className="p-4">
               {getCardContent()} {/* Llamamos directamente la función para obtener el contenido de la carta */}
             </div>
