@@ -58,9 +58,15 @@ const Resumen = ({ onToggleResumen }) => {
         </button>
       </div>
 
-      <div className={`w-full mt-4 flex flex-col items-center justify-center overflow-hidden transition-all duration-500 ease-in-out ${showDetails ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"}`}>
-        <div className="w-[95%] sm:w-[65%] border border-black rounded-3xl">
-          <div className="bg-[#383838] rounded-t-2xl py-6 text-white text-center">Confirma y paga</div>
+      <div
+        className={`w-full mt-4 flex flex-col items-center justify-center overflow-hidden transition-all duration-500 ease-in-out ${
+          showDetails ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="w-[85%] sm:w-[65%] border border-black rounded-3xl">
+          <div className="bg-[#383838] rounded-t-2xl py-6 text-white text-center">
+            Confirma y paga
+          </div>
           <div className="w-full flex justify-center">
             <div className="p-4 w-[80%] flex items-center justify-between border-b border-black border-opacity-25">
               <span className="creatoBold text-xl">Tu viaje</span>
