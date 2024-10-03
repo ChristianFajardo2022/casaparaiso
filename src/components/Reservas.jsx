@@ -13,10 +13,18 @@ const Reserva = ({ onClose }) => {
   const [endDate, setEndDate] = useState(null);
 
   // Verifica si alguna sección está abierta para ajustar la altura
-  const isAnySectionOpen = showCalendars || showSalida || showCuantos || showResumen;
+  const isAnySectionOpen =
+    showCalendars || showSalida || showCuantos || showResumen;
 
   const toggleCalendars = () => {
     setShowCalendars(!showCalendars);
+    setShowCuantos(false);
+    setShowResumen(false);
+  };
+
+  const handleChangeCard = () => {
+    setShowCuantos(true);
+    setShowCalendars(false);
   };
 
   const toggleSalida = () => {
@@ -25,17 +33,21 @@ const Reserva = ({ onClose }) => {
 
   const toggleCuantos = () => {
     setShowCuantos(!showCuantos);
+    setShowCalendars(false);
+    setShowResumen(false);
   };
 
-  const toggleResumen = (isOpen) => {
-    setShowResumen(isOpen);
+  const toggleResumen = () => {
+    setShowResumen(!showResumen);
+    setShowCalendars(false);
+    setShowCuantos(false);
   };
 
   return (
     <div className="absolute w-full h-full bg-white bg-opacity-20 backdrop-blur-2xl z-[55] flex justify-center items-center">
       <div
         className={`w-full sm:w-[580px] bg-[--bg] rounded-xl shadow-lg transition-all duration-500 ease-in-out overflow-y-auto barra relative ${
-          isAnySectionOpen ? 'h-full' : 'h-full sm:h-auto'
+          isAnySectionOpen ? "h-full" : "h-full sm:h-auto"
         }`}
       >
         <div className="relative flex flex-col items-center">
@@ -62,7 +74,10 @@ const Reserva = ({ onClose }) => {
               </p>
             </div>
             <button className="px-4 py-[2px] text-sm my-4 flex justify-center items-center rounded-2xl bg-[#f4efdf] text-[#022933] hover:bg-[#f4efdf3d]">
-              <img className="w-2 mr-2" src="/imagenes-tarjetas/iconoUbicacion.svg" />
+              <img
+                className="w-2 mr-2"
+                src="/imagenes-tarjetas/iconoUbicacion.svg"
+              />
               Ubicación
             </button>
           </div>
@@ -72,6 +87,7 @@ const Reserva = ({ onClose }) => {
         <div className="p-4 text-[#022933]">
           <ul className="space-y-2">
             <Calendario
+              handleChangeCard={handleChangeCard}
               showCalendars={showCalendars}
               toggleCalendars={toggleCalendars}
               showSalida={showSalida}
@@ -83,7 +99,10 @@ const Reserva = ({ onClose }) => {
             />
             <Cuantos showCuantos={showCuantos} toggleCuantos={toggleCuantos} />
             {/* Aquí pasamos la función toggleResumen */}
-            <Resumen onToggleResumen={toggleResumen} />
+            <Resumen
+              onToggleResumen={toggleResumen}
+              showResumen={showResumen}
+            />
             <Consulta />
           </ul>
         </div>
