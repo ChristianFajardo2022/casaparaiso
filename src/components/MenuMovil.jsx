@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 
-// JSON con iconos y nombres
 const items = [
   { nombre: "Terraza", icono: "/imagenes-tarjetas/iconoTerraza-18.svg" },
   { nombre: "Habitación_secundaria", icono: "/imagenes-tarjetas/iconoHabitacionSecundiaria-18.svg" },
@@ -24,56 +23,23 @@ const tiempo = [
 
 const Menu = ({ onButtonClick }) => {
   const containerRef = useRef(null);
-  const [currentIndex, setCurrentIndex] = useState(0); // Para manejar el índice actual
   const refs = useRef(
     items.reduce((acc, item) => {
       acc[item.nombre] = {
         imageRef: React.createRef(),
         buttonRef: React.createRef(),
-        verMasRef: React.createRef(), // Ref para el botón "Ver más"
+        verMasRef: React.createRef(),
       };
       return acc;
     }, {})
   );
 
-  // Detectar gestos de deslizamiento
-  useEffect(() => {
-    let startX = 0;
-    let endX = 0;
-
-    const handleTouchStart = (e) => {
-      startX = e.touches[0].clientX;
-    };
-
-    const handleTouchMove = (e) => {
-      endX = e.touches[0].clientX;
-    };
-
-    const handleTouchEnd = () => {
-      if (startX > endX + 50) {
-        // Deslizó a la izquierda (mostrar siguiente)
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
-      } else if (startX < endX - 50) {
-        // Deslizó a la derecha (mostrar anterior)
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + items.length) % items.length);
-      }
-    };
-
-    const container = containerRef.current;
-    container.addEventListener("touchstart", handleTouchStart);
-    container.addEventListener("touchmove", handleTouchMove);
-    container.addEventListener("touchend", handleTouchEnd);
-
-    return () => {
-      container.removeEventListener("touchstart", handleTouchStart);
-      container.removeEventListener("touchmove", handleTouchMove);
-      container.removeEventListener("touchend", handleTouchEnd);
-    };
-  }, []);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
   useEffect(() => {
     const showImage = (imageRef, start, duration, buttonRef, verMasRef) => {
-      // Mostrar la imagen con gsap
       gsap.to(imageRef.current, {
         opacity: 1,
         pointerEvents: "all",
@@ -89,7 +55,6 @@ const Menu = ({ onButtonClick }) => {
         },
       });
 
-      // Animación para el nombre del botón
       gsap.to(buttonRef.current, {
         duration: 1.5,
         ease: "easeInOut",
@@ -107,7 +72,6 @@ const Menu = ({ onButtonClick }) => {
         },
       });
 
-      // Animación para el botón "Ver más"
       gsap.to(verMasRef.current, {
         duration: 1.5,
         ease: "easeInOut",
@@ -123,7 +87,6 @@ const Menu = ({ onButtonClick }) => {
         },
       });
 
-      // Desplazar el botón al centro de la vista
       buttonRef.current.scrollIntoView({
         behavior: "smooth",
         block: "center",
@@ -161,6 +124,45 @@ const Menu = ({ onButtonClick }) => {
     onButtonClick(nombre);
   };
 
+  const handleTouchStart = (e) => {
+    setIsDragging(true);
+    setStartX(e.touches[0].pageX - containerRef.current.offsetLeft);
+    setScrollLeft(containerRef.current.scrollLeft);
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+    const x = e.touches[0].pageX - containerRef.current.offsetLeft;
+    const walk = (x - startX) * 2; // Velocidad de desplazamiento
+    containerRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+    // Detectar el botón centrado
+    const buttons = Array.from(containerRef.current.children[0].children);
+    let closest = null;
+    let closestDistance = Infinity;
+    buttons.forEach((button) => {
+      const box = button.getBoundingClientRect();
+      const centerDistance = Math.abs(box.left + box.width / 2 - window.innerWidth / 2);
+      if (centerDistance < closestDistance) {
+        closestDistance = centerDistance;
+        closest = button;
+      }
+    });
+    if (closest) {
+      const nombre = closest.querySelector("button").innerText.replace(/ /g, "_");
+      handleButtonClick(nombre);
+
+      const imageRef = refs.current[nombre]?.imageRef;
+      const buttonRef = refs.current[nombre]?.buttonRef;
+      const verMasRef = refs.current[nombre]?.verMasRef;
+
+      showImage(imageRef, 0, 6, buttonRef, verMasRef);
+    }
+  };
+
   return (
     <div
       className="fixed bottom-20 left-0 w-full text-[--bg] transition-colors duration-500 ease-out z-[51] overflow-hidden"
@@ -168,24 +170,23 @@ const Menu = ({ onButtonClick }) => {
       <div
         ref={containerRef}
         className="flex justify-center pt-28 pb-8 w-full no-scrollbar"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
         <div className="flex justify-start items-center w-full">
-          {items.map((item, index) => (
+          {items.map((item) => (
             <div
               key={item.nombre}
-              className={`relative flex flex-col items-center min-w-[100vw] ${
-                currentIndex === index ? "block" : "hidden"
-              }`}
+              className="relative flex flex-col items-center min-w-[100vw]"
             >
-              {/* Ícono cargado desde el JSON */}
               <img
                 ref={refs.current[item.nombre].imageRef}
-                src={item.icono} // Ruta al icono desde el JSON
+                src={item.icono}
                 alt={item.nombre}
                 className="h-10 w-10 object-contain opacity-0 pointer-events-none transition-all duration-500 ease-in-out"
               />
 
-              {/* Nombre del botón */}
               <button
                 ref={refs.current[item.nombre].buttonRef}
                 onClick={() => handleButtonClick(item.nombre)}
@@ -194,7 +195,6 @@ const Menu = ({ onButtonClick }) => {
                 <span>{item.nombre.replace(/_/g, " ")}</span>
               </button>
 
-              {/* Botón "Ver más" con GSAP */}
               <button
                 ref={refs.current[item.nombre].verMasRef}
                 className="w-20 bg-[#f4efdf3d] hover:bg-[--bg] text-[--bg] hover:text-[#022933] text-xs mt-2 rounded-md opacity-0 pointer-events-noneduration-500 ease-in-out"
