@@ -39,32 +39,32 @@ const VideoPlayer = ({
   const handleShowTarjeta = (nombre) => {
     const tarjetaData = data.find((item) => item.title === nombre);
     setShowTarjeta(tarjetaData);
-    // setPlay(false);
+    setPlay(false);
   };
 
   const handleHideTarjeta = () => {
     setShowTarjeta(false);
-    // setPlay(true);
+    setPlay(true);
   };
 
   const handleShowReserva = () => {
     setShowReserva(true);
-    // setPlay(false); // Detener el video al mostrar la reserva
+    setPlay(false); // Detener el video al mostrar la reserva
   };
 
   const handleHideReserva = () => {
     setShowReserva(false);
-    //setPlay(true); // Reanudar el video al ocultar la reserva
+    setPlay(true); // Reanudar el video al ocultar la reserva
   };
 
   const handleShowUbicacion = () => {
     setShowUbicacion(true);
-    // setPlay(false); // Detener el video al mostrar la ubicación
+    setPlay(false); // Detener el video al mostrar la ubicación
   };
 
   const handleHideUbicacion = () => {
     setShowUbicacion(false);
-    //setPlay(true); // Reanudar el video al ocultar la ubicación
+    setPlay(true); // Reanudar el video al ocultar la ubicación
   };
 
   return (
@@ -100,11 +100,11 @@ const VideoPlayer = ({
       {showUbicacion && <Ubicacion onClose={handleHideUbicacion} />}
 
       <LogoImagen />
-      <div className="bg-gradient-to-b from-[#00000070] via-transparent to-[#000000a1] fixed z-[1] top-0 left-0 w-screen h-screen pointer-events-none select-none" />
+      <div className="bg-gradient-to-b from-[#00000070] via-transparent to-[#000000a1] fixed z-[1] top-0 left-0 w-screen h-screen pointer-events-none" />
       <video
         ref={videoRef}
         src={videoSrc}
-        className="w-full h-full object-cover pointer-events-none select-none"
+        className="absolute top-0 left-0 w-full h-full object-cover"
         loop
         muted
         playsInline
