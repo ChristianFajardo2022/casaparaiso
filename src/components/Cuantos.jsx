@@ -31,7 +31,7 @@ const Cuantos = ({ showCuantos, toggleCuantos }) => {
         <h2 className="text-base creatoLight">Huéspedes</h2>
         <div className="flex flex-col space-y-4 mt-4 px-4">
           <div className="flex items-center justify-between">
-            <span>Adultos</span><span className=" text-[10px]">(13 años en adelante)</span>
+            <div className=" flex flex-col"><span>Adultos</span><span className=" text-[10px]">13 años en adelante</span></div>
             <div className="flex items-center">
               <button onClick={() => handleDecrement(0)} className="w-6 bg-[#88A198] border border-gray-300 rounded-full">-</button>
               <span className="px-4">{counters[0]}</span>
@@ -39,7 +39,7 @@ const Cuantos = ({ showCuantos, toggleCuantos }) => {
             </div>
           </div>
           <div className="flex items-center justify-between">
-            <span>Niños</span>
+            <div className=" flex flex-col"><span>Niños</span><span className=" text-[10px]">Edad 2 -12e</span></div>
             <div className="flex items-center">
               <button onClick={() => handleDecrement(1)} className="w-6 bg-[#88A198] border border-gray-300 rounded-full">-</button>
               <span className="px-4">{counters[1]}</span>
@@ -47,7 +47,7 @@ const Cuantos = ({ showCuantos, toggleCuantos }) => {
             </div>
           </div>
           <div className="flex items-center justify-between">
-            <span>Bebés</span>
+            <div className=" flex flex-col"><span>Bebés</span><span className=" text-[10px]">Edad 2 -12e</span></div>
             <div className="flex items-center">
               <button onClick={() => handleDecrement(2)} className="w-6 bg-[#88A198] border border-gray-300 rounded-full">-</button>
               <span className="px-4">{counters[2]}</span>
