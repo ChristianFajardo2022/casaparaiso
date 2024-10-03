@@ -131,7 +131,7 @@ const VideoPlayer = ({
           Reserva
         </button>
       </div>
-      <div className="absolute top-8 right-2 transform -translate-x-1/2 w-40 z-[40] space-y-2">
+      <div className="absolute top-8 right-[-2.5rem] sm:right-2 transform -translate-x-1/2 w-28 sm:w-40 z-[40] space-y-2">
       <button
           className="w-full border-[1px] border-[#022933] px-10 flex justify-center items-center py-1 rounded-2xl bg-[#f4efdf3d] text-[#022933] hover:bg-[#f4efdf]"
           onClick={handleShowUbicacion}

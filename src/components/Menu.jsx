@@ -10,7 +10,7 @@ const tiempo = [
   { Piscina: [34, 39] },
   { Habitación_principal: [52, 56] },
   { Comedor: [63, 66] },
-  { Naturaleza: [70, 72] },
+  { Exteriores: [70, 72] },
 ];
 
 const nombres = tiempo.map((obj) => Object.keys(obj)[0]);

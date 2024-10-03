@@ -19,7 +19,7 @@ const tiempo = [
   { Piscina: [34, 39] },
   { Habitación_principal: [52, 56] },
   { Comedor: [63, 66] },
-  { Habitación_auxiliar: [70, 73] },
+  { Exteriores: [70, 73] },
 ];
 
 const Menu = ({ onButtonClick }) => {

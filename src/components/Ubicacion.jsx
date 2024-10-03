@@ -27,8 +27,8 @@ const Ubicacion = ({ onClose }) => {
 
   return (
     <div className="fixed top-0 left-0 w-full h-full z-[55] flex items-center justify-center backdrop-blur-xl bg-gray-900 bg-opacity-35">
-              <button onClick={onClose} className="absolute top-[-45px] md:top-4 right-4 md:right-4">
-          <img src={imagencerrar} className="w-6 md:w-6" />
+              <button onClick={onClose} className="absolute top-[22vh] md:top-4 right-4 md:right-8">
+          <img src={imagencerrar} className="w-8 md:w-12 cerrar" />
         </button>
 
       <div className="flex flex-col items-center w-full max-w-[90%] md:max-w-[70%] relative  rounded-2xl">
