@@ -8,7 +8,7 @@ import Reserva from "../components/Reservas";
 import Ubicacion from "../components/Ubicacion";
 import AudioPlayer from "./audio/AudioPlayer";
 import audioMusic from "../assets/audioMusic.mp3";
-import { useMediaQuery } from 'react-responsive';
+import { useMediaQuery } from "react-responsive";
 import "../react-datepicker.css";
 
 const VideoPlayer = ({
@@ -26,7 +26,7 @@ const VideoPlayer = ({
   const [showUbicacion, setShowUbicacion] = useState(false);
 
   // Detectar si la pantalla es móvil
-  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   useEffect(() => {
     if (play) {
@@ -39,32 +39,32 @@ const VideoPlayer = ({
   const handleShowTarjeta = (nombre) => {
     const tarjetaData = data.find((item) => item.title === nombre);
     setShowTarjeta(tarjetaData);
-    setPlay(false);
+    // setPlay(false);
   };
 
   const handleHideTarjeta = () => {
     setShowTarjeta(false);
-    setPlay(true);
+    // setPlay(true);
   };
 
   const handleShowReserva = () => {
     setShowReserva(true);
-    setPlay(false);  // Detener el video al mostrar la reserva
+    // setPlay(false); // Detener el video al mostrar la reserva
   };
 
   const handleHideReserva = () => {
     setShowReserva(false);
-    setPlay(true);  // Reanudar el video al ocultar la reserva
+    //setPlay(true); // Reanudar el video al ocultar la reserva
   };
 
   const handleShowUbicacion = () => {
     setShowUbicacion(true);
-    setPlay(false);  // Detener el video al mostrar la ubicación
+    // setPlay(false); // Detener el video al mostrar la ubicación
   };
 
   const handleHideUbicacion = () => {
     setShowUbicacion(false);
-    setPlay(true);  // Reanudar el video al ocultar la ubicación
+    //setPlay(true); // Reanudar el video al ocultar la ubicación
   };
 
   return (
@@ -100,11 +100,11 @@ const VideoPlayer = ({
       {showUbicacion && <Ubicacion onClose={handleHideUbicacion} />}
 
       <LogoImagen />
-      <div className="bg-gradient-to-b from-[#00000070] via-transparent to-[#000000a1] fixed z-[1] top-0 left-0 w-screen h-screen pointer-events-none" />
+      <div className="bg-gradient-to-b from-[#00000070] via-transparent to-[#000000a1] fixed z-[1] top-0 left-0 w-screen h-screen pointer-events-none select-none" />
       <video
         ref={videoRef}
         src={videoSrc}
-        className="absolute top-0 left-0 w-full h-full object-cover pointer-events-none select-none"
+        className="w-full h-full object-cover pointer-events-none select-none"
         loop
         muted
         playsInline
@@ -132,14 +132,16 @@ const VideoPlayer = ({
         </button>
       </div>
       <div className="absolute top-8 right-[-2.5rem] sm:right-2 transform -translate-x-1/2 w-28 sm:w-40 z-[40] space-y-2">
-      <button
+        <button
           className="w-full border-[1px] border-[#022933] px-10 flex justify-center items-center py-1 rounded-2xl bg-[#f4efdf3d] text-[#022933] hover:bg-[#f4efdf]"
           onClick={handleShowUbicacion}
         >
-          <img className="w-4 mr-2" src="/imagenes-tarjetas/iconoUbicacion.svg" />
+          <img
+            className="w-4 mr-2"
+            src="/imagenes-tarjetas/iconoUbicacion.svg"
+          />
           Ubicación
         </button>
-
       </div>
     </div>
   );
