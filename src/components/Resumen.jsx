@@ -62,7 +62,7 @@ const Resumen = ({ onToggleResumen, showResumen }) => {
 
       <div
         className={`w-full mt-4 flex flex-col items-center justify-center overflow-hidden transition-all duration-500 ease-in-out ${
-          showDetails ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
+          showResumen ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="w-[85%] sm:w-[65%] border border-black rounded-3xl">
