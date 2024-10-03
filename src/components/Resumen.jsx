@@ -63,7 +63,7 @@ const Resumen = ({ onToggleResumen }) => {
           showDetails ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="w-[85%] sm:w-[65%] border border-black rounded-3xl">
+        <div className="w-full sm:w-[65%] border border-black rounded-3xl">
           <div className="bg-[#383838] rounded-t-2xl py-6 text-white text-center">
             Confirma y paga
           </div>
