@@ -111,7 +111,7 @@ const VideoPlayer = ({
       <video
         ref={videoRef}
         src={videoSrc}
-        className="absolute top-0 left-0 w-full h-full object-cover"
+        className="absolute top-0 left-0 w-full h-full object-cover scale-[1.2]"
         loop
         muted
         playsInline
