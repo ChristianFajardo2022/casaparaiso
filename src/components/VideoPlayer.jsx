@@ -39,7 +39,7 @@ const VideoPlayer = ({
   const handleShowTarjeta = (nombre) => {
     const tarjetaData = data.find((item) => item.title === nombre);
     setShowTarjeta(tarjetaData);
-    setPlay(false);
+    //setPlay(false);
   };
 
   const handleHideTarjeta = () => {
@@ -111,7 +111,7 @@ const VideoPlayer = ({
       <video
         ref={videoRef}
         src={videoSrc}
-        className="absolute top-0 left-0 w-full h-full object-cover scale-[1.2]"
+        className="absolute top-0 left-0 w-full h-full object-cover lg:scale-[1.2] xs:scale-[1.4] pointer-events-none -z-50"
         loop
         muted
         playsInline
