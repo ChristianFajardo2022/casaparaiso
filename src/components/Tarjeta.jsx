@@ -60,9 +60,7 @@ const Tarjeta = ({ title, onClose, showTarjeta }) => {
 
   return (
     <div
-      className={`${
-        showTarjeta ? "pointer-events-auto" : "pointer-events-none"
-      } fixed top-0 left-0 w-full h-full z-[55] flex items-center justify-center backdrop-blur-xl bg-gray-900 bg-opacity-35`}
+      className={`fixed top-0 left-0 w-full h-full z-[55] flex items-center justify-center backdrop-blur-xl bg-gray-900 bg-opacity-35`}
     >
       <div className="flex flex-col sm:mt-0 mt-20 items-center h-[90vh] sm:h-auto max-w-[100%] md:max-w-[70%] bg-[--bg] relative p-4 rounded-2xl md:flex-row md:p-0 overflow-auto">
         <button
