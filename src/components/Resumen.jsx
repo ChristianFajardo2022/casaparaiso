@@ -57,9 +57,9 @@ const Resumen = ({ onToggleResumen, showResumen }) => {
       const entrada = new Date(snap.fechaEntrada);
       const salida = new Date(snap.fechaSalida);
 
-      const diffMilisegundos = salida - entrada;
+      const miliSegundos = salida - entrada;
 
-      const Noches = diffMilisegundos / (1000 * 60 * 60 * 24);
+      const Noches = miliSegundos / (1000 * 60 * 60 * 24);
 
       estadoReserva.totalEstadia = Noches * snap.precioNoche;
     }
