@@ -11,15 +11,15 @@ export const ButtonWhts = () => {
 
   const enviarReserva = () => {
     const mensaje = `
-    Hola deseo reservar en Casa Paraiso tayrona para ${snap.adultos} Adultos, ${
+    Hola deseo reservar en Casa Paraiso Tayrona para ${snap.adultos} adultos, ${
       snap.niños > 0 ? snap.niños : 0
-    } niños, ${snap.bebes > 0 ? snap.bebes : 0} bebes en las fechas:\n
+    } niños, ${snap.bebes > 0 ? snap.bebes : 0} bebés en las fechas:\n
     Entrada: ${snap.fechaEntrada}\n
     Salida: ${snap.fechaSalida}\n
-    Total de Huéspedes: ${estadoReserva.totalHuespedes}\n
-    Precio Total de Estadia: $${estadoReserva.totalEstadia}`.trim();
+    Total de huéspedes: ${estadoReserva.totalHuespedes}\n
+    Precio total de estadia: $${estadoReserva.totalEstadia}`.trim();
 
-    const numeroWhatsApp = "3203780802";
+    const numeroWhatsApp = "3102405157";
     const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(
       mensaje
     )}`;

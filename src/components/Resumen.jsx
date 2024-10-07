@@ -49,7 +49,7 @@ const Resumen = ({ onToggleResumen, showResumen }) => {
 
   const handleToggle = () => {
     setShowDetails(!showDetails);
-    onToggleResumen(); // Notifica al componente padre si se abrió o cerró
+    onToggleResumen();
   };
 
   useEffect(() => {
