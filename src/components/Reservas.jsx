@@ -27,8 +27,9 @@ const Reserva = ({ onClose, showReserva }) => {
     setShowCalendars(false);
   };
 
-  const toggleSalida = () => {
-    setShowSalida(!showSalida);
+  const ChangeCuantos = () => {
+    setShowCuantos(false);
+    setShowResumen(true);
   };
 
   const toggleCuantos = () => {
@@ -101,7 +102,11 @@ const Reserva = ({ onClose, showReserva }) => {
               endDate={endDate}
               setEndDate={setEndDate}
             />
-            <Cuantos showCuantos={showCuantos} toggleCuantos={toggleCuantos} />
+            <Cuantos
+              showCuantos={showCuantos}
+              toggleCuantos={toggleCuantos}
+              ChangeCuantos={ChangeCuantos}
+            />
             {/* Aquí pasamos la función toggleResumen */}
             <Resumen
               onToggleResumen={toggleResumen}

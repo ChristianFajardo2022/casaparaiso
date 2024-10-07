@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
-import { es } from "date-fns/locale";
 import { addMonths } from "date-fns";
 import "react-datepicker/dist/react-datepicker.css";
 import {
@@ -10,6 +9,9 @@ import {
   mobile,
   tablet,
 } from "../helpers/MedidasResponsive";
+import estadoReserva from "../store/reserva";
+import { format } from "date-fns";
+import { es } from "date-fns/locale"; // Para usar el formato en español
 
 const Calendario = ({
   handleChangeCard,
@@ -27,35 +29,38 @@ const Calendario = ({
 
   const [clickCount, setClickCount] = useState(0);
 
+  const formatDate = (date) => {
+    return format(date, "dd MMM, yyyy", { locale: es });
+  };
+
+  const updateDates = (startDate, endDate) => {
+    estadoReserva.fechaEntrada = startDate ? formatDate(startDate) : null;
+    estadoReserva.fechaSalida = endDate ? formatDate(endDate) : null;
+  };
+
   const handleDateChange = (date) => {
-    // Incrementa el contador de clics
     setClickCount((prevCount) => prevCount + 1);
 
-    // Si es el tercer clic, reiniciar los valores y establecer el nuevo startDate
     if (clickCount >= 4) {
       setStartDate(date);
       setEndDate(null);
-      setClickCount(1); // Reiniciar el contador a 1 ya que se seleccionó el nuevo startDate
-    }
-    // Si no hay startDate definido, la fecha seleccionada es el startDate
-    else if (!startDate) {
+      setClickCount(1);
+      updateDates(date, null); // Actualizar en Valtio con la fecha formateada
+    } else if (!startDate) {
       setStartDate(date);
-    }
-    // Si no hay endDate y la fecha seleccionada es mayor al startDate, será el endDate
-    else if (!endDate && date > startDate) {
+      updateDates(date, null); // Actualizar en Valtio
+    } else if (!endDate && date > startDate) {
       setEndDate(date);
-    }
-    // Si la fecha seleccionada es menor al startDate, actualizar el startDate
-    else if (date < startDate) {
+      updateDates(startDate, date); // Actualizar en Valtio
+    } else if (date < startDate) {
       setStartDate(date);
-    }
-    // Si la fecha seleccionada está entre startDate y endDate, será el nuevo endDate
-    else if (endDate && date > startDate && date < endDate) {
+      updateDates(date, endDate); // Actualizar en Valtio
+    } else if (endDate && date > startDate && date < endDate) {
       setEndDate(date);
-    }
-    // Si la fecha seleccionada es mayor al endDate, actualizar el endDate
-    else if (date > startDate && date > endDate) {
+      updateDates(startDate, date); // Actualizar en Valtio
+    } else if (date > startDate && date > endDate) {
       setEndDate(date);
+      updateDates(startDate, date); // Actualizar en Valtio
     }
   };
 
@@ -119,10 +124,7 @@ const Calendario = ({
               {!showSalida ? (
                 <DatePicker
                   selected={startDate}
-                  onChange={(date) => {
-                    setStartDate(date);
-                    setShowSalida(true); // Cambiar automáticamente al calendario de salida
-                  }}
+                  onChange={handleDateChange}
                   locale={es}
                   selectsStart
                   startDate={startDate}
@@ -141,7 +143,7 @@ const Calendario = ({
               ) : (
                 <DatePicker
                   selected={endDate}
-                  onChange={(date) => setEndDate(date)}
+                  onChange={handleDateChange}
                   locale={es}
                   inline
                   monthsShown={2}

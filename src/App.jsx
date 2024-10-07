@@ -19,7 +19,7 @@ const App = () => {
     }
     setIsPlaying(!isPlaying);
   };
-  console.log(isPlaying);
+
   return (
     <>
       {loading && (
@@ -40,7 +40,6 @@ const App = () => {
         play={play}
         isPlaying={isPlaying}
         handleClickAudio={handleClickAudio}
-        
       />
     </>
   );

@@ -28,7 +28,8 @@
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.1.14",
-    "three": "^0.167.0"
+    "three": "^0.167.0",
+    "valtio": "^2.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
