@@ -68,7 +68,7 @@ const Resumen = ({ onToggleResumen, showResumen }) => {
   }, [snap.fechaEntrada, snap.fechaSalida, snap.precioNoche]);
 
   return (
-    <li className="flex flex-col items-center p-4 border-b-[1px] border-[#022933] resumen">
+    <li className="flex flex-col items-center p-4  resumen">
       <div className="flex items-center justify-between w-full h-[5vh] sm:h-full">
         <img
           className="w-8"
@@ -151,7 +151,7 @@ const Resumen = ({ onToggleResumen, showResumen }) => {
           <ButtonWhts />
         </div>
 
-        <div className="flex flex-col items-center w-full mt-4">
+{/*         <div className="flex flex-col items-center w-full mt-4">
           {!loading && preferenceId ? (
             <Wallet
               initialization={{ preferenceId }}
@@ -162,7 +162,7 @@ const Resumen = ({ onToggleResumen, showResumen }) => {
           )}
           <span className="mt-2">Paga de forma segura</span>
         </div>
-      </div>
+ */}      </div>
     </li>
   );
 };

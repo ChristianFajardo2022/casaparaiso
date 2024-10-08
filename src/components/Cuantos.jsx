@@ -116,7 +116,7 @@ const Cuantos = ({ showCuantos, toggleCuantos, ChangeCuantos }) => {
 
   return (
     <li className="relative flex flex-col items-center justify-between p-4 border-b-[1px] border-[#022933] h-auto cuantos">
-      <div className="flex items-center justify-between w-full h-[5vh] sm:h-full">
+      <div className="flex items-center justify-between w-full h-[5vh] sm:h-full mb-8">
         <img
           className="w-8"
           src="/imagenes-tarjetas/iconoC2.svg"

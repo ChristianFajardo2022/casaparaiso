@@ -112,8 +112,8 @@ const Reserva = ({ onClose, showReserva }) => {
               onToggleResumen={toggleResumen}
               showResumen={showResumen}
             />
-            <Consulta />
-          </ul>
+{/*             <Consulta />
+ */}          </ul>
         </div>
       </div>
     </div>
