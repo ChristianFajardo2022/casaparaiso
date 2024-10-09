@@ -12,26 +12,49 @@ const Resumen = ({ onToggleResumen, showResumen }) => {
     const calcularTotalHuespedes = () => {
       const total = snap.adultos + snap.niños + snap.bebes;
       estadoReserva.totalHuespedes = total;
-
-      // Ajuste del precio basado en el número de huéspedes
+  
+      // Ajuste del precio basado en el número de huéspedes y el año de la fecha de entrada
       let precioBase;
-      if (total >= 1 && total <= 4) {
-        precioBase = 1800;
-      } else if (total >= 5 && total <= 6) {
-        precioBase = 2000;
-      } else if (total >= 7 && total <= 9) {
-        precioBase = 2200;
-      } else if (total >= 10 && total <= 15) {
-        precioBase = 2500;
-      } else {
-        precioBase = 0; // Manejo de caso si se excede el límite
+      const fechaEntrada = snap.fechaEntrada ? convertirFecha(snap.fechaEntrada) : new Date();
+      const añoEntrada = fechaEntrada.getFullYear();
+  
+      // Precios para 2024
+      if (añoEntrada === 2024) {
+        if (total >= 1 && total <= 4) {
+          precioBase = 1800;
+        } else if (total >= 5 && total <= 6) {
+          precioBase = 2000;
+        } else if (total >= 7 && total <= 9) {
+          precioBase = 2200;
+        } else if (total >= 10 && total <= 15) {
+          precioBase = 2500;
+        } else {
+          precioBase = 0; // Manejo de caso si se excede el límite
+        }
       }
+      // Precios para 2025
+      else if (añoEntrada === 2025) {
+        if (total >= 1 && total <= 4) {
+          precioBase = 2100; // Precio base para 2025
+        } else if (total >= 5 && total <= 6) {
+          precioBase = 2300; // Precio base para 2025
+        } else if (total >= 7 && total <= 9) {
+          precioBase = 2600; // Precio base para 2025
+        } else if (total >= 10 && total <= 15) {
+          precioBase = 2900; // Precio base para 2025
+        } else {
+          precioBase = 0; // Manejo de caso si se excede el límite
+        }
+      } else {
+        precioBase = 0; // Manejo de caso si el año no es 2024 ni 2025
+      }
+  
       estadoReserva.precioNoche = precioBase;
     };
-
+  
     calcularTotalHuespedes();
-  }, [snap.adultos, snap.niños, snap.bebes]);
-
+  }, [snap.adultos, snap.niños, snap.bebes, snap.fechaEntrada]);
+  
   // Cálculo del total de la estadía basado en las fechas
   const convertirFecha = (fechaStr) => {
     if (!fechaStr) return "Fecha no disponible";
