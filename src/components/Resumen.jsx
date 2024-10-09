@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSnapshot } from "valtio";
 import estadoReserva from "../store/reserva";
 import { format, isValid } from "date-fns";
+import { ButtonWhts } from "./whatsapp/ButtonWhts";
 
 const Resumen = ({ onToggleResumen, showResumen }) => {
   const snap = useSnapshot(estadoReserva);
@@ -15,13 +16,13 @@ const Resumen = ({ onToggleResumen, showResumen }) => {
       // Ajuste del precio basado en el número de huéspedes
       let precioBase;
       if (total >= 1 && total <= 4) {
-        precioBase = 2100;
+        precioBase = 1800;
       } else if (total >= 5 && total <= 6) {
-        precioBase = 2300;
+        precioBase = 2000;
       } else if (total >= 7 && total <= 9) {
-        precioBase = 2600;
+        precioBase = 2200;
       } else if (total >= 10 && total <= 15) {
-        precioBase = 2900;
+        precioBase = 2500;
       } else {
         precioBase = 0; // Manejo de caso si se excede el límite
       }
@@ -123,6 +124,10 @@ const Resumen = ({ onToggleResumen, showResumen }) => {
             </div>
           </div>
         </div>
+        <div className="flex flex-col items-center w-full mt-4">
+          <ButtonWhts />
+        </div>
+
       </div>
     </li>
   );
