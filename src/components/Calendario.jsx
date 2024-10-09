@@ -39,31 +39,36 @@ const Calendario = ({
   };
 
   const handleDateChange = (date) => {
+    if (!date || isNaN(date.getTime())) {
+      console.error("Fecha inválida");
+      return; // Salir si la fecha no es válida
+    }
+  
     setClickCount((prevCount) => prevCount + 1);
-
+  
     if (clickCount >= 4) {
       setStartDate(date);
       setEndDate(null);
       setClickCount(1);
-      updateDates(date, null); // Actualizar en Valtio con la fecha formateada
+      updateDates(date, null); 
     } else if (!startDate) {
       setStartDate(date);
-      updateDates(date, null); // Actualizar en Valtio
+      updateDates(date, null); 
     } else if (!endDate && date > startDate) {
       setEndDate(date);
-      updateDates(startDate, date); // Actualizar en Valtio
+      updateDates(startDate, date); 
     } else if (date < startDate) {
       setStartDate(date);
-      updateDates(date, endDate); // Actualizar en Valtio
+      updateDates(date, endDate); 
     } else if (endDate && date > startDate && date < endDate) {
       setEndDate(date);
-      updateDates(startDate, date); // Actualizar en Valtio
+      updateDates(startDate, date); 
     } else if (date > startDate && date > endDate) {
       setEndDate(date);
-      updateDates(startDate, date); // Actualizar en Valtio
+      updateDates(startDate, date); 
     }
   };
-
+  
   return (
     <li className="flex flex-col items-center justify-between p-4 border-b-[1px] border-[#022933] h-auto calendario">
       <div

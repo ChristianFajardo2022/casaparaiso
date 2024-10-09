@@ -56,7 +56,7 @@ const Cuantos = ({ showCuantos, toggleCuantos, ChangeCuantos }) => {
           <div className="flex items-center justify-between">
             <div className=" flex flex-col">
               <span>Niños</span>
-              <span className=" text-[10px]">Edad 2 a 12e</span>
+              <span className=" text-[10px]">Edad 2 a 12 años</span>
             </div>
             <div className="flex items-center">
               <button

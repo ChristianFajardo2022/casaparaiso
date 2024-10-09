@@ -23,11 +23,15 @@ const Reserva = ({ onClose, showReserva }) => {
   };
 
   const handleChangeCard = () => {
+    console.log("Fecha de entrada:", startDate);
+  console.log("Fecha de salida:", endDate);
     setShowCuantos(true);
     setShowCalendars(false);
   };
 
   const ChangeCuantos = () => {
+    console.log("Fecha de entrada:", startDate);
+  console.log("Fecha de salida:", endDate);
     setShowCuantos(false);
     setShowResumen(true);
   };

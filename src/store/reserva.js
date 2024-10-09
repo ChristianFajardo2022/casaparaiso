@@ -1,4 +1,3 @@
-// estado.js
 import { proxy } from "valtio";
 
 const estadoReserva = proxy({
@@ -8,8 +7,12 @@ const estadoReserva = proxy({
   niños: 0,
   bebes: 0,
   totalHuespedes: 0,
-  precioNoche: 2500,
+  precioNoche: 2100, // Valor inicial
   totalEstadia: 0,
+
+  calcularTotalHuespedes() {
+    this.totalHuespedes = this.adultos + this.niños + this.bebes;
+  },
 });
 
 export default estadoReserva;
