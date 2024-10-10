@@ -4,13 +4,13 @@ import { gsap } from "gsap";
 import Tarjeta from "./Tarjeta"; // Asegúrate de importar el componente Tarjeta
 
 const tiempo = [
-  { Terraza: [4, 10] },
-  { Habitación_secundaria: [14, 18] },
-  { Cocina: [23, 29] },
-  { Piscina: [34, 39] },
-  { Habitación_principal: [52, 56] },
-  { Comedor: [63, 66] },
-  { Exteriores: [70, 72] },
+  { Terraza: [3, 17] },
+  { Habitación_secundaria: [25, 38] },
+  { Cocina: [40, 51] },
+  { Piscina: [61, 83] },
+  { Habitación_principal: [88, 95] },
+  { Comedor: [98, 105] },
+  { Exteriores: [110, 132] },
 ];
 
 const nombres = tiempo.map((obj) => Object.keys(obj)[0]);
@@ -56,27 +56,27 @@ const Menu = ({
         duration: 0.5,
         delay: start,
       })
-        .to([imageRef.current, verMasRef.current], {
-          pointerEvents: "none",
-          opacity: 0,
-          scale: 1,
-          duration: 1,
-          delay: sumaTotal - start,
-        }, `+=0`)
-        .to(buttonRef.current, {
-          duration: 0.5 + (sumaTotal - start),
-          ease: "easeInOut",
-          opacity: 0.7,
-          scale: 1.2,
-          color: "white",
-        }, `-=0.5`)
-        .to(buttonRef.current, {
-          duration: 1,
-          opacity: 0.5,
-          scale: 1,
-          ease: "easeInOut",
-          color: "white",
-        }, `+=0`);
+      .to(buttonRef.current, {
+        opacity: 0.7,
+        scale: 1.2,
+        duration: 0.5,  // Igual duración
+        ease: "easeInOut",
+        color: "white",
+      }, `-=0.5`)  // Comienza simultáneamente con el primer .to de imageRef y verMasRef
+      .to([imageRef.current, verMasRef.current], {
+        pointerEvents: "none",
+        opacity: 0,
+        scale: 1,
+        duration: 1,
+        delay: sumaTotal - start,
+      }, `+=0`)
+      .to(buttonRef.current, {
+        opacity: 0.5,
+        scale: 1,
+        duration: 1,  // Igual duración
+        ease: "easeInOut",
+        color: "white",
+      }, `-=1`);  // Comienza simultáneamente con el segundo .to de imageRef y verMasRef
     };
 
     const video = document.querySelector("video");
