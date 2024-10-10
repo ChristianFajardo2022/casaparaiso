@@ -7,13 +7,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const tiempo = [
-  { Terraza: [4, 10] },
-  { Habitación_secundaria: [14, 18] },
-  { Cocina: [23, 29] },
-  { Piscina: [34, 39] },
-  { Habitación_principal: [52, 56] },
-  { Comedor: [63, 66] },
-  { Exteriores: [70, 72] },
+  { Terraza: [3, 17] },
+  { Habitación_secundaria: [25, 38] },
+  { Cocina: [40, 51] },
+  { Piscina: [61, 83] },
+  { Habitación_principal: [88, 95] },
+  { Comedor: [98, 105] },
+  { Exteriores: [110, 132] },
 ];
 
 function MenuMovil() {
