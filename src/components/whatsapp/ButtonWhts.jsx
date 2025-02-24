@@ -19,7 +19,7 @@ export const ButtonWhts = () => {
     Total de huéspedes: ${estadoReserva.totalHuespedes}\n
     Precio total de estadia: $${estadoReserva.totalEstadia}`.trim();
 
-    const numeroWhatsApp = "3102405157";
+    const numeroWhatsApp = "3102308078";
     const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(
       mensaje
     )}`;
