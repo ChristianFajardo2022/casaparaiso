@@ -11,11 +11,13 @@
     ],
     "icono": "/imagenes-tarjetas/iconoTerraza-18.svg",
     "desTarjeta": "Recorre nuestra terraza",
+    "nivel": "Tercer nivel",
+    "subtitulo": "Brisa, río y mar",
     "description": "<p>Esta zona proporciona una ventana natural, que abre sus puertas a la conexión con la naturaleza, gracias a sus modernos sofás que permiten sentir la brisa caribeña y la belleza del encuentro del rio y el mar.</p>"
   },
   {
     "id": 2,
-    "title": "Habitación_secundaria",
+    "title": "Habitación secundaria",
     "videoSrc": "/videos/playa.mp4",
     "images": [
       "/imagenes-tarjetas/secundaria1.jpg",
@@ -25,6 +27,8 @@
     ],
     "icono": "/imagenes-tarjetas/iconoHabitacionSecundiaria-18.svg",
     "desTarjeta": "Recorre nuestras habitaciones Secundarias",
+    "nivel": "Segundo nivel",
+    "subtitulo": "Tu escape perfecto",
     "description": "<p>Equipada con vistas impresionantes a la selva de Los Naranjos y detalles acogedores que invitan al descanso y una cama diseñada para brindar el máximo confort, creando un espacio perfecto para relajarse y disfrutar de la experiencia única que ofrece Casa Paraíso Tayrona.</p>"
   },
   {
@@ -39,6 +43,8 @@
     ],
     "icono": "/imagenes-tarjetas/iconoCocina.svg",
     "desTarjeta": "Recorre nuestra cocina",
+    "nivel": "Primer nivel",
+    "subtitulo": "Sabores del paraíso",
     "description": "<p>Allí preparamos parte del menú que se incluye en tu estadía como: desayunos, almuerzos, cenas, bebidas y postres, todo hecho con ingredientes frescos y de primera calidad. O si prefieres, puedes inspirarte y crear deliciosas comidas mientras disfrutas del entorno natural, ya que está equipada con electrodomésticos de alta gama, amplias encimeras y una vista panorámica a la selva.</p>"
   },
   {
@@ -53,11 +59,13 @@
     ],
     "icono": "/imagenes-tarjetas/iconoPiscina-18.svg",
     "desTarjeta": "Recorre nuestras piscinas",
+    "nivel": "Primer nivel",
+    "subtitulo": "Oasis en el paraíso",
     "description": "<p>Ubicadas estratégicamente para tu disfrute, puedes elegir entre entrenar y mantenerte en forma en la piscina semiolímpica o simplemente relajarte en la opción recreativa, donde solo tendrás que preocuparte por disfrutar de una tarde tranquila mientras te rodea la naturaleza que nos envuelve.</p>"
   },
   {
     "id": 5,
-    "title": "Habitación_principal",
+    "title": "Habitación principal",
     "videoSrc": "/videos/playa.mp4",
     "images": [
       "/imagenes-tarjetas/principal1.jpg",
@@ -67,6 +75,8 @@
     ],
     "icono": "/imagenes-tarjetas/iconoHabitacionPrincipal.svg",
     "desTarjeta": "Recorre nuestra Habitación Principal",
+    "nivel": "Tercer nivel",
+    "subtitulo": "Momento de calma",
     "description": "<p>En Casa Paraiso Tayrona, este será un espacio para descansar, lleno de calma y relajación, donde los ventanales panorámicos brindarán iluminación natural sobre la relajante cama King-size. Su baño privado, completamente dotado y con acabados de alta calidad, te harán sentir como en un spa dentro de tu habitación.</p>"
   },
   {
@@ -81,6 +91,8 @@
     ],
     "icono": "/imagenes-tarjetas/iconoComedor-18.svg",
     "desTarjeta": "Recorre nuestro comedor",
+    "nivel": "Primer nivel",
+    "subtitulo": "Sabor y tradición",
     "description": "<p>Este espacio acogedor y elegante, decorado con una cautelosa selección de objetos artesanales, añade un toque cultural y autentico. La mesa de madera maciza, rodeada de sillas color coral, crea un ambiente vibrante y caribeño para disfrutar de comidas típicas en familia o con amigos.</p>"
   },
   {
@@ -88,13 +100,15 @@
     "title": "Exteriores",
     "videoSrc": "/videos/playa.mp4",
     "images": [
-      "/imagenes-tarjetas/exteriores1.jpg",
+      "/imagenes-tarjetas/ExteriorCasaParaísoTayrona1.jpg",
       "/imagenes-tarjetas/exteriores2.jpg",
-      "/imagenes-tarjetas/exteriores3.jpg",
+      "/imagenes-tarjetas/ExteriorCasaParaísoTayrona2.jpg",
       "/imagenes-tarjetas/exteriores3.jpg"
     ],
     "icono": "/imagenes-tarjetas/iconoPlaya-18.svg",
     "desTarjeta": "Recorre nuestra naturaleza",
-    "description": "<p>Además, de todas la amenidades y comodidades para que tu estadía en Kasa Paraíso Tayrona sea inolvidable, tenemos el privilegio de estar rodeados por un entorno natural con acceso directo a playas vírgenes de arena blanca y a un río cristalino, con un puerto privado al que puedes acceder a pie desde la casa. </p>"
+    "nivel": "",
+    "subtitulo": "Paraíso natural",
+    "description": "<p>Además, de todas la amenidades y comodidades para que tu estadía en Casa Paraíso Tayrona sea inolvidable, tenemos el privilegio de estar rodeados por un entorno natural con acceso directo a playas vírgenes de arena blanca y a un río cristalino, con un puerto privado al que puedes acceder a pie desde la casa. </p>"
   }
 ]

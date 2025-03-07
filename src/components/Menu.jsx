@@ -5,10 +5,10 @@ import Tarjeta from "./Tarjeta"; // Asegúrate de importar el componente Tarjeta
 
 const tiempo = [
   { Terraza: [3, 17] },
-  { Habitación_secundaria: [25, 38] },
+  { "Habitación secundaria": [25, 38] },
   { Cocina: [40, 51] },
   { Piscina: [61, 83] },
-  { Habitación_principal: [88, 95] },
+  { "Habitación principal": [88, 95] },
   { Comedor: [98, 105] },
   { Exteriores: [110, 132] },
 ];

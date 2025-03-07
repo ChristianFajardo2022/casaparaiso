@@ -5,7 +5,7 @@ import der from "/imagenes-tarjetas/der.svg";
 import cer from "/imagenes-tarjetas/cerrargaleria.svg";
 import data from "../assets/data"; // Importar los datos
 
-const Tarjeta = ({ title, onClose, showTarjeta }) => {
+const Tarjeta = ({ title, onClose, nivel, subtitulo, showTarjeta }) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFullScreen, setIsFullScreen] = useState(false);
@@ -86,7 +86,7 @@ const Tarjeta = ({ title, onClose, showTarjeta }) => {
                 <h1 className="font-bold text-xl md:text-2xl">
                   {tarjetaData?.title || ""}
                 </h1>
-                <p className="text-xs">primer piso</p>
+                <p className="text-xs">{tarjetaData?.nivel || ""}</p>
               </div>
             </div>
           </div>
@@ -106,7 +106,7 @@ const Tarjeta = ({ title, onClose, showTarjeta }) => {
               />
             ))}
           </div>
-          <h1 className="text-3xl mb-8">Descripción:</h1>
+          <h1 className="text-3xl mb-8">{tarjetaData?.subtitulo || ""}</h1>
           <p
             dangerouslySetInnerHTML={{ __html: tarjetaData?.description || "" }}
             className="text-start text-xs mt-2 w-full creatoRegular"
