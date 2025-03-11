@@ -86,14 +86,14 @@ const Resumen = ({ onToggleResumen, showResumen }) => {
       if (totalHuespedes >= 1 && totalHuespedes <= 4) return 2520;
       if (totalHuespedes >= 5 && totalHuespedes <= 6) return 2760;
       if (totalHuespedes >= 7 && totalHuespedes <= 9) return 3120;
-      if (totalHuespedes >= 10 && totalHuespedes <= 12) return 3480;
-      return 0; // Manejo de error si excede 12
+      if (totalHuespedes >= 10 && totalHuespedes <= 15) return 3480;
+      return 0; // Manejo de error si excede 15
     } else {
       // Temporada Baja
       if (totalHuespedes >= 1 && totalHuespedes <= 4) return 2100;
       if (totalHuespedes >= 5 && totalHuespedes <= 6) return 2300;
       if (totalHuespedes >= 7 && totalHuespedes <= 9) return 2600;
-      if (totalHuespedes >= 10 && totalHuespedes <= 12) return 2900;
+      if (totalHuespedes >= 10 && totalHuespedes <= 15) return 2900;
       return 0; 
     }
   };
